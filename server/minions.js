@@ -2,7 +2,8 @@ const minionsRouter = require("express").Router();
 
 module.exports = minionsRouter;
 
-const nodemon = require("nodemon");
+// const nodemon = require("nodemon");
+
 const {
   getAllFromDatabase,
   getFromDatabaseById,
@@ -28,6 +29,8 @@ minionsRouter.get("/", (req, res, next) => {
 
 minionsRouter.get("/:minionId", (req, res, next) => {
   res.send(req.minion);
+  console.log(req.route);
+  console.log(req.params);
 });
 
 minionsRouter.post("/", (req, res, next) => {
